@@ -1,0 +1,28 @@
+## ERD - draw.io CSV import
+## Based on erd_data.csv, using font styles (bold, underlined)
+#
+# label: %column_name%
+#
+## fontStyle: 0 -> normal, 1 -> bold, 2 -> italic, 4 -> underlined, 8 -> strikethrough
+# style: text;fontStyle=%font_style%;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;
+# parentstyle: swimlane;fontStyle=%font_style%;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;
+#
+# connect: {"from": "references", "to": "column_id", "style": "edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;endFill=0;startArrow=ERone;startFill=0;"}
+#
+# width: 140
+# height: 30
+# layout: auto
+#
+# identity: column_id
+# parent: table_name
+#
+table_name,column_name,key_type,data_type,font_style,column_id,references
+,Customer,,,1,Customer,
+,Order,,,1,Order,
+Customer,ID,PK,integer,4,customer.id,
+Customer,Name,,string,0,customer.name,
+Customer,Address,,string,0,customer.address,
+Order,ID,PK,integer,4,order.id,
+Order,Customer ID,FK,integer,0,order.customer_id,customer.id
+Order,Line Items Count,,integer,0,order.line_items_count,
+Order,Total Amount,,number,0,order.total_amount,

@@ -1,0 +1,27 @@
+## ERD - draw.io CSV import, using List (swimlane) shape
+# minimal data
+#
+# label: %column_name%
+#
+# style: text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;
+# parentstyle: swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;
+#
+# connect: {"from": "references", "to": "column_id", "style": "edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;endFill=0;startArrow=ERone;startFill=0;"}
+#
+# width: 140
+# height: 30
+# layout: auto
+#
+# identity: column_id
+# parent: table_name
+# ignore: column_id,table_name,references
+#
+table_name,column_name,column_id,references
+,Customer,Customer,
+,Order,Order,
+Customer,column_id,customer.column_id,
+Customer,Name,customer.name,
+Customer,Address,customer.address,
+Order,column_id,order.column_id,
+Order,Total Amount,order.total_amount,
+Order,Customer column_id,order.customer_id,customer.column_id

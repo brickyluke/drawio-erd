@@ -1,0 +1,27 @@
+## ERD - draw.io CSV import
+## Generated from erd_data.csv
+#
+# label: %column_name%
+#
+# style: text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;
+# parentstyle: swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;
+#
+# connect: {"from": "references", "to": "column_id", "style": "edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;endFill=0;startArrow=ERone;startFill=0;"}
+#
+# width: 140
+# height: 30
+# layout: auto
+#
+# identity: column_id
+# parent: table_name
+#
+table_name,column_name,key_type,data_type,column_id,references
+,Customer,,,Customer,
+,Order,,,Order,
+Customer,ID,PK,integer,customer.id,
+Customer,Name,,string,customer.name,
+Customer,Address,,string,customer.address,
+Order,ID,PK,integer,order.id,
+Order,Customer ID,FK,integer,order.customer_id,customer.id
+Order,Line Items Count,,integer,order.line_items_count,
+Order,Total Amount,,number,order.total_amount,
