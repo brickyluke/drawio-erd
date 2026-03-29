@@ -1,0 +1,8 @@
+table_name,column_name,key_type,data_type,column_id,references
+Customer,ID,PK,integer,customer.id,
+Customer,Name,,string,customer.name,
+Customer,Address,,string,customer.address,
+Order,ID,PK,integer,order.id,
+Order,Customer ID,FK,integer,order.customer_id,customer.id
+Order,Line Items Count,,integer,order.line_items_count,
+Order,Total Amount,,number,order.total_amount,
